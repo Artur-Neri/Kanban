@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-top">
+            <header class="sidebar-header">
+                <div class="logo-desktop">
+                    <img src="./assets/logo.png" alt="kanban logo">
+                    <img src="./assets/logo-text.png" alt="kanban logo text">
+                </div>
+            </header>
+
+            <ul class="sidebar-options"> 
+                <h3 class="sidebar-options__title">all boards (3)</h3>
+
+                <li class="sidebar-options__option--selected">
+                    <img src="./assets/fluent_board-split-white.png" alt="board">
+                    <span>Trabalho</span>
+                </li>
+                <li class="sidebar-options__option">
+                    <img src="./assets/fluent_board-split-grey.png" alt="board">
+                    <span>Meus projetos</span>
+                </li>
+                <li class="sidebar-options__option--new">
+                    <img src="./assets/fluent_board-split-purple.png" alt="board">
+                    <span>+ Create New Board</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar__ld">
+                <img src="./assets/light-mode.png" alt="light mode icon">
+                <div class="ld-toggle" id="js-ld-toggle">
+                    <div class="toggle-ball"></div>
+                </div>
+                <img src="./assets/dark-mode.png" alt="dark mode icon">
+            </div>
+            <div class="sidebar__hide">
+                <img src="./assets/hide-sidebar.png" alt="hide button image">
+                <span>Hide Sidebar</span>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
