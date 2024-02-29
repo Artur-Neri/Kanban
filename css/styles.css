@@ -30,9 +30,14 @@
 
 body {
     height: 100vh;
+    width: 100vw;
+    
     display: flex;
-
     font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.jc-e {
+    justify-content: flex-end;
 }
 
 .sidebar {
@@ -138,7 +143,8 @@ body {
     display: flex;
     align-items: center;
     padding: 0 3px;
-    justify-content: flex-start;
+
+    cursor: pointer;
 }
 
 .toggle-ball {
@@ -164,6 +170,59 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-
 }
+
+main{
+    flex: 1;
+}
+
+.main__header {
+    background-color: var(--color-dark-grey);
+    padding: 29px 24px 37px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__header-title {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.main__header-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 1.5rem;
+}
+
+.main__header-controls button{
+    background-color: var(--color-main-purple);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 24px;
+
+    font-size: var(--font-size-m);
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.main__header-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: var(--color-medium-grey);
+    border-radius: 50%;
+}
+
 
