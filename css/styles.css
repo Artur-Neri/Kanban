@@ -130,6 +130,7 @@ body {
     width: 276px;
 
     color: var(--color-main-purple);
+    cursor: pointer;
 }
 
 .sidebar__ld{
