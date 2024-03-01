@@ -65,6 +65,7 @@ body {
 .sidebar-options{
     display: flex;
     flex-direction: column;
+    gap: .25rem;
 }
 
 .sidebar-options__title {
@@ -91,6 +92,10 @@ body {
     width: 276px;
     font-size: var(--font-size-m);
     color: var(--color-medium-grey);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+    cursor: pointer;
 }
 
 
@@ -173,6 +178,8 @@ body {
 }
 
 main{
+    display: flex;
+    flex-direction: column;
     flex: 1;
 }
 
@@ -216,6 +223,11 @@ main{
     align-items: center;
 
     gap: 3px;
+}
+
+.main__view {
+    background-color: var(--color-very-dark-grey);
+    height: 100%;
 }
 
 .dot {
