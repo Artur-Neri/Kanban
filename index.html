@@ -1,75 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
     <div id="sidebar" class="sidebar">
-        <div class="sidebar-top">
-            <header class="sidebar-header">
-                <div class="logo-desktop">
-                    <img src="./assets/logo.png" alt="kanban logo">
-                    <img src="./assets/logo-text.png" alt="kanban logo text">
-                </div>
-            </header>
+      <div class="sidebar-top">
+        <header class="sidebar-header">
+          <div class="logo-desktop">
+            <img src="./assets/logo.png" alt="kanban logo" />
+            <img src="./assets/logo-text.png" alt="kanban logo text" />
+          </div>
+        </header>
 
-            <ul class="sidebar-options"> 
-                <h3 class="sidebar-options__title">all boards (2)</h3>
+        <ul class="sidebar-options">
+          <h3 class="sidebar-options__title">all boards (2)</h3>
 
-                <li class="sidebar-options__option">
-                    <img src="./assets/fluent_board-split-grey.png" alt="board">
-                    <span>Trabalho</span>
-                </li>
-                <li class="sidebar-options__option">
-                    <img src="./assets/fluent_board-split-grey.png" alt="board">
-                    <span>Meus projetos</span>
-                </li>
-                <li class="sidebar-options__option--new">
-                    <img src="./assets/fluent_board-split-purple.png" alt="board">
-                    <span>+ Create New Board</span>
-                </li>
-            </ul>
+          <li class="sidebar-options__option">
+            <img src="./assets/fluent_board-split-grey.png" alt="board" />
+            <span>Trabalho</span>
+          </li>
+          <li class="sidebar-options__option">
+            <img src="./assets/fluent_board-split-grey.png" alt="board" />
+            <span>Meus projetos</span>
+          </li>
+          <li class="sidebar-options__option--new">
+            <img src="./assets/fluent_board-split-purple.png" alt="board" />
+            <span>+ Create New Board</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar__ld">
+          <img src="./assets/light-mode.png" alt="light mode icon" />
+          <div class="ld-toggle" id="js-ld-toggle">
+            <div class="toggle-ball"></div>
+          </div>
+          <img src="./assets/dark-mode.png" alt="dark mode icon" />
         </div>
-
-        <div class="sidebar-bottom">
-            <div class="sidebar__ld">
-                <img src="./assets/light-mode.png" alt="light mode icon">
-                <div class="ld-toggle" id="js-ld-toggle">
-                    <div class="toggle-ball"></div>
-                </div>
-                <img src="./assets/dark-mode.png" alt="dark mode icon">
-            </div>
-            <div class="sidebar__hide">
-                <img src="./assets/hide-sidebar.png" alt="hide button image">
-                <span>Hide Sidebar</span>
-            </div>
+        <div class="sidebar__hide">
+          <img src="./assets/hide-sidebar.png" alt="hide button image" />
+          <span>Hide Sidebar</span>
         </div>
+      </div>
     </div>
     <main>
+      <div class="main__header-sidebar--hidden">
+        <div class="main__logo">
+          <div class="logo-desktop">
+            <img src="./assets/logo.png" alt="kanban logo" />
+            <img src="./assets/logo-text.png" alt="kanban logo text" />
+          </div>
+        </div>
         <header class="main__header">
-            <h2 class="main__header-title">
-                Platform Launch
-            </h2>
-            <div class="main__header-controls">
-                <button class="button1 button1-inactive">+ Add New Task</button>
-                <div class="main__header-menu">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+          <h2 class="main__header-title">Platform Launch</h2>
+          <div class="main__header-controls">
+            <button class="button1 button1-inactive">+ Add New Task</button>
+            <div class="main__header-menu">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
             </div>
+          </div>
         </header>
-        <section class="main__view">
-            <div class="main__view--empty">
-                <span>This board is empty. Create a new column to get started.</span>
-                <button class="button1">+ Add New Column</button>
-            </div>
-        </section>
+      </div>
+      <section class="main__view">
+        <div class="main__view--empty">
+          <span>This board is empty. Create a new column to get started.</span>
+          <button class="button1">+ Add New Column</button>
+        </div>
+
+        <div class="show-sidebar">
+            <img src="./assets/show-sidebar.png" alt="show sidebar icon">
+        </div>
+      </section>
     </main>
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>
