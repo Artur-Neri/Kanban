@@ -12,7 +12,7 @@ boards.forEach((board) => {
     board.onmouseover = ()=>{
 
         if (board.classList.contains('sidebar-options__option--selected')) {
-            console.log('está ativo');
+            console.log('nada');
         } else {
             board.style.backgroundColor = '#A8A4FF';
             board.style.color = '#ffffff';
@@ -23,7 +23,7 @@ boards.forEach((board) => {
     board.onmouseout = ()=>{
 
         if (board.classList.contains('sidebar-options__option--selected')) {
-            console.log('está ativo');
+            console.log('nada');
         } else {
             board.style.backgroundColor = '';
             board.style.color = '#828FA3';
