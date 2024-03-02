@@ -223,6 +223,7 @@ main {
 
 .button1-inactive {
   opacity: 0.3;
+  cursor: default;
 }
 
 .main__header-menu {
@@ -266,6 +267,22 @@ main {
   display: none;
 }
 
+.show-sidebar {
+  display: none;
+
+  position: absolute;
+  left: 0;
+  bottom: 32px;
+  padding: 18px;
+
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+
+  background-color: var(--color-main-purple);
+
+  cursor: pointer;
+}
+
 /* APLICAR ESSES ESTILOS PARA QUANDO ESCONDER A BARRA LATERAL */
 
 /* .sidebar {
@@ -294,18 +311,3 @@ main {
   position: relative;
 }
 */
-.show-sidebar {
-  display: none;  
-
-  position: absolute;
-  left: 0;
-  bottom: 32px;
-  padding: 18px;
-
-  border-bottom-right-radius: 50%;
-  border-top-right-radius: 50%;
-
-  background-color: var(--color-main-purple);
-
-  cursor: pointer;
-} 

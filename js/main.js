@@ -2,6 +2,8 @@ const toggle = document.querySelector('#js-ld-toggle');
 
 let boards = document.querySelectorAll('.sidebar-options__option');
 
+let btns1 = document.querySelectorAll('.button1');
+
 const sidebar = document.querySelector('.sidebar');
 const mainLogo = document.querySelector('.main__logo');
 const mainHeaderSidebar = document.querySelector('.main__header-sidebar--hidden');
@@ -92,3 +94,22 @@ function inativaTodosBoards() {
         board.classList.remove('sidebar-options__option--selected');
     })
 }
+
+// Verifica se o botão está ativo para mudar ou não a cor do background
+btns1.forEach((button) => {
+    button.onmouseover = ()=>{
+        if (button.classList.contains('button1-inactive')){
+            console.log('inactive button');
+        } else {
+            button.style.backgroundColor = 'var(--color-main-purple-hover)'
+        }
+    }
+
+    button.onmouseout = ()=> {
+       if (button.classList.contains('button1-inactive')){
+            console.log('inactive button');
+        } else {
+            button.style.backgroundColor = 'var(--color-main-purple)'
+        } 
+    }
+})
