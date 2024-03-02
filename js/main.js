@@ -12,6 +12,13 @@ const mainView = document.querySelector('.main__view');
 const btnShowSidebar = document.querySelector('.show-sidebar');
 const btnSidebarHide = document.querySelector('.sidebar__hide');
 
+const menuOptions = document.querySelector('.main__header-menu');
+const menuOptionShow = document.querySelector('.main__header-menu-options');
+
+menuOptions.onclick = () => {
+    menuOptionShow.classList.toggle('show-flex')
+}
+
 // TOGGLE LIGHT AND DARK MODE
 toggle.onclick = function(){
     this.classList.toggle('jc-e');
