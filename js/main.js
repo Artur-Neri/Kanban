@@ -116,6 +116,12 @@ let quadros = [
             }
         ],
         status: null
+    },
+    {
+        id: 1,
+        titulo: 'Quadro 2',
+        colunas: [],
+        status: null
     }
 ]
 
