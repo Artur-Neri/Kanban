@@ -61,7 +61,7 @@ body {
   gap: 1rem;
 }
 
-.sidebar-options {
+.sidebar-options, #listaQuadros {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -284,10 +284,68 @@ main {
 .main__view {
   background-color: var(--color-very-dark-grey);
   height: 100%;
+  padding: 24px 0 24px 24px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main__view--board {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  gap: 24px;
+}
+
+.coluna-title {
+  margin-bottom: 24px;
+  color: var(--color-medium-grey);
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cor-coluna {
+  width: 15px;
+  height: 15px;
+  background-color: #49C4E5;
+  display: block;
+  border-radius: 50%;
+}
+
+.coluna-tarefas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main__view--board-tarefa {
+  padding: 23px 16px;
+  background-color: var(--color-dark-grey);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.tarefa-titulo {
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: var(--font-size-m);
+}
+
+.tarefa-progress {
+  color: var(--color-medium-grey);
+  font-size: var(--font-size-s);
+  font-weight: bold;
 }
 
 .main__view--empty {

@@ -1,6 +1,5 @@
 const toggle = document.querySelector('#js-ld-toggle');
 
-let boards = document.querySelectorAll('.sidebar-options__option');
 
 let btns1 = document.querySelectorAll('.button1');
 
@@ -14,6 +13,129 @@ const btnSidebarHide = document.querySelector('.sidebar__hide');
 
 const menuOptions = document.querySelector('.main__header-menu');
 const menuOptionShow = document.querySelector('.main__header-menu-options');
+
+const listaQuadros = document.querySelector('#listaQuadros');
+const mainViewBoard = document.querySelector('.main__view--board');
+
+let quadros = [
+    {
+        id: 0,
+        titulo: 'Quadro 1',
+        colunas: [
+            {
+                titulo: 'Coluna 1 B1',
+                tarefas: [
+                    {
+                        tarefa: 'Build UI for onboarding flow',
+                        descricao: "We know what we're planning to build for version one. Now we need to finalise the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition.",
+                        subtarefas: [
+                            {
+                                check: true,
+                                descricao: 'Research competitor pricing and business models'
+                            }
+
+                        ]
+                    },
+                    {
+                        tarefa: 'Tarefa 2 id 0',
+                        descricao: "We know what we're planning to build for version one. Now we need to finalise the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition.",
+                        subtarefas: [
+                            {
+                                check: true,
+                                descricao: 'Research competitor pricing and business models'
+                            }
+
+                        ]
+                    }
+                ]
+            },
+
+
+            {
+                titulo: 'Coluna 2 b1',
+                tarefas: [
+                    {
+                        tarefa: 'Tarefa 1 da coluna 2',
+                        descricao: "Planeja tudo incrivelmente planejado",
+                        subtarefas: [
+                            {
+                                check: true,
+                                descricao: 'Research competitor pricing and business models'
+                            }
+
+                        ]
+                    },
+                    {
+                        tarefa: 'Tarefa 2 da coluna 2',
+                        descricao: "We know what we're planning to build for version one. Now we need to finalise the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition.",
+                        subtarefas: [
+                            {
+                                check: true,
+                                descricao: 'Research competitor pricing and business models'
+                            }
+
+                        ]
+                    }
+                ]
+            }
+
+
+        ],
+        status: 'Doing'
+    },
+    {
+        id: 1,
+        titulo: 'Quadro 2',
+        colunas: [
+            {
+                titulo: 'coluna 1 b2',
+                tarefas: [
+                    {
+                        tarefa: 'Primeira tarefa do id 1',
+                        descricao: "Descricao da tarefa 1 do id 1",
+                        subtarefas: [
+                            {
+                                check: true,
+                                descricao: 'Research competitor pricing and business models'
+                            }
+
+                        ]
+                    },
+                    {
+                        tarefa: 'Segunda tarefa do id 2',
+                        descricao: "Descricao da tarefa 2 do id 1",
+                        subtarefas: [
+                            {
+                                check: true,
+                                descricao: 'Research competitor pricing and business models'
+                            }
+
+                        ]
+                    }
+                ]
+            }
+        ],
+        status: null
+    }
+]
+
+function renderizaListaQuadros() {
+    let elementoQuadros = quadros.map(quadro => {
+        return (
+`<li class="sidebar-options__option" data-id="${quadro.id}">
+    <img src="./assets/fluent_board-split-grey.png" alt="board" />
+    <span>${quadro.titulo}</span>
+</li>
+`)
+    }).join('');
+
+    listaQuadros.innerHTML = elementoQuadros;
+}
+
+// PRIMEIRO CRIA OS ELEMENTOS, DEPOIS SELECIONA
+renderizaListaQuadros();
+let boards = document.querySelectorAll('.sidebar-options__option');
+
 
 menuOptions.onclick = () => {
     menuOptionShow.classList.toggle('show-flex')
@@ -58,9 +180,50 @@ boards.forEach((board) => {
         board.children[0].src = './assets/fluent_board-split-white.png';
         board.classList.toggle('sidebar-options__option--selected');
         console.log('toggle');
+
+        // CARREGA AS COLUNAS NA TELA PRINCIPAL
+        console.log(quadros[board.dataset.id]);
+        renderizaColunasNaTelaPrincipal(quadros[board.dataset.id]);
     }
 
 })
+
+function renderizaColunasNaTelaPrincipal(quadro){
+    console.log('renderizando quadro', quadro.titulo);
+    if (quadro.colunas.length < 1) {
+        console.log('quadro sem colunas');
+        mainView.innerHTML = `<div class="main__view--empty">
+        <span>This board is empty. Create a new column to get started.</span>
+        <button class="button1">+ Add New Column</button>
+      </div>`
+
+    } else {
+        mainView.innerHTML = '';
+        let novasColunas ='';
+
+        quadro.colunas.forEach(coluna => {
+            let novasTarefas = coluna.tarefas.map(tarefa => {
+                return(`<div class="main__view--board-tarefa">
+                    <h4 class="tarefa-titulo">${tarefa.tarefa}</h4>
+                    <span class="tarefa-progress">0 of 3 subtasks</span>
+                </div>`)
+            }).join('');
+            let novaColuna = `<div class="main__view--board-coluna">
+                <h3 class="coluna-title"><span class="cor-coluna"></span>${coluna.titulo} (1)</h3>
+                <div class="coluna-tarefas">
+                    ${novasTarefas}
+                </div>
+            </div>
+            `
+            novasColunas += novaColuna;
+            console.log(novasColunas);
+        });
+
+        console.log(novasColunas);
+        mainView.innerHTML = `<div class="main__view--board">${novasColunas}</div>`
+
+    }
+}
 
 // ESCONDER A BARRA LATERAL
 
